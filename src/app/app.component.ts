@@ -12,11 +12,11 @@ export class AppComponent {
   drink: string[] = ['Drink a shot','Drink two shots','Drink in one gulp','Blowjob shot','Drink from the bottle','Drink from his body'];
   soft: string[] = ['Kiss on the lips', 'Touch the ass',  'Show ass','Show them','Show boobs','Sexy striptease',
                     'Find honey on her body while blindfolded'];
-  hard: string[] = ['Doggy style', 'Seated scissors', 'Spork sex','Guess 3 ingredients from her private parts', 'See saw sex',
-                    'Crazy starfish', 'Lap dance sex', 'Sex on a bar stool', 'Anal sex - If you agree','Double penetration with sex toy'];
+  hard: string[] = ['Doggy style', 'Seated scissors', 'Spork sex','See saw sex', 'Crazy starfish', 'Lap dance sex', 
+                    'Sex on a bar stool', 'Anal sex - If you agree','Double penetration with sex toy'];
   medium: string[] = ['Oral sex', 'Standing oral sex', 'Ass fingering', 'Chair blowjob' ,'Masturbate','Have fun with a sex toy',
                       'Nipples licking', 'Masturbate him', '69', 'Ass licking', 'Oral sex with ass fingering',
-                      'Oral sex while masturbating','Masturbate each other','Bondage'];
+                      'Oral sex while masturbating','Masturbate each other','Bondage', 'Guess 3 ingredients from her private parts'];
   randomElement: string = 'home';
   test:boolean = false;
   tot:number =0;
