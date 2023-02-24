@@ -1,0 +1,110 @@
+@mixin media($breakpoint) {
+  @if ($breakpoint == tablet) {
+    @media (min-width: 48rem) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == desktop) {
+    @media (min-width: 75rem) {
+      @content;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #369;
+  font-size: 2.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+
+  & img {
+    @include media(tablet) {
+      width: 100%;
+      margin-inline: unset;
+      margin-left: 5px;
+    }
+  }
+}
+
+.container button {
+  cursor: pointer;
+  margin: 0.5em;
+  padding: 0;
+}
+
+.threeButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  position:relative;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+}
+
+.buttonP{
+  margin: 0.5em;
+  padding: 0;
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+}
+
+.buttonHome {
+  cursor: pointer;
+  margin: 0.5em;
+  padding: 0;
+  border: 0;
+  background-color: white;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+}
+
+h2 {
+  color: #A80000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.child{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-top: 5em;
+  border: 1px solid red;
+  padding: 1px;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+}

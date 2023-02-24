@@ -1,0 +1,89 @@
+<h1 class="title">{{ title }}</h1>
+
+<div class="container">
+  <button
+    *ngIf="chose == 'home'"
+    type="button"
+    (click)="showThreeButtons('buttons')">
+    <img src="../assets/img/PORN.png" width="100%"/>
+  </button>
+
+  <div class="threeButtons" *ngIf="chose == 'buttons'">
+    <button type="button" class = "buttonP" (click)="showThreeButtons('soft'); countMedium()">
+      <h2>SOFT</h2>
+    </button>
+    <button *ngIf="tot > 9" type="button" class = "buttonP" (click)="showThreeButtons('medium'); countHard()">
+      <h2>MEDIUM</h2>
+    </button>
+    <button *ngIf="totHard > 9" type="button" class = "buttonP" (click)="showThreeButtons('hard')">
+      <h2>HARD</h2>
+    </button>
+    <button type="button" class="buttonHome" (click)="showThreeButtons('home')">
+      <img src="../assets/img/home.png" width="50px" height="50px" />
+    </button>
+  </div>
+
+  <button *ngIf="chose == 'home'" type="button" (click)="showThreeButtons('alcohol')">
+    <img src="../assets/img/ALCOHOL.png" />
+  </button>
+
+  <div *ngIf="chose == 'alcohol'">
+    <img src="{{ getImgUrl(drink) }}" width="300px" height="300px" />
+    <div class="home">
+      <h2>{{randomElement}}</h2>
+      <button
+        type="button"
+        class="buttonHome"
+        (click)="showThreeButtons('home')">
+        <img src="../assets/img/home.png" width="50px" height="50px" />
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="chose == 'soft'">
+    <img src="{{ getImgUrl(soft) }}" width="300px" height="300px" />
+    <div class="home">
+      <h2>{{randomElement}}</h2>
+      <button
+        type="button"
+        class="buttonHome"
+        (click)="showThreeButtons('home')">
+        <img src="../assets/img/home.png" width="50px" height="50px" />
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="chose == 'medium'">
+    <img src="{{ getImgUrl(medium) }}" width="300px" height="300px" />
+    <div class="home">
+      <h2>{{randomElement}}</h2>
+      <button
+        type="button"
+        class="buttonHome"
+        (click)="showThreeButtons('home')">
+        <img src="../assets/img/home.png" width="50px" height="50px" />
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="chose == 'hard'">
+    <img src="{{ getImgUrl(hard) }}" width="300px" height="300px" />
+    <div class="home">
+      <h2>{{randomElement}}</h2>
+      <button
+        type="button"
+        class="buttonHome"
+        (click)="showThreeButtons('home')">
+        <img src="../assets/img/home.png" width="50px" height="50px" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class = "child" *ngIf="tot<10 && chose == 'buttons'">
+  <h2>Medium section unlockable in {{10-tot}} rounds</h2>
+</div>
+
+<div class = "child" *ngIf="totHard<10 && chose == 'buttons' && tot>=10">
+  <h2>Hard section unlockable in {{10-totHard}} medium rounds</h2>
+</div>
